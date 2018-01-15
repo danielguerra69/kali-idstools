@@ -2,7 +2,7 @@ FROM danielguerra/docker-kali
 MAINTAINER Daniel Guerra
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update && apt-get -y dist-upgrade
-RUN apt-get -yy install bro tshark suricata snort wireshark ntopng \
+RUN apt-get -yy install bro tshark suricata snort \
                         libgetopt-declare-perl libxml-simple-perl libdbi-perl libclass-dbi-mysql-perl \
                         python python-mysql.connector python-lxml python-pip \
                         python-ndg-httpsclient python-requests python-pika python-dateutil \
