@@ -21,6 +21,7 @@ RUN ln -s /usr/share/GeoIP/GeoLiteCityv6.dat /usr/share/GeoIP/GeoIPCityv6.dat
 RUN wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
 RUN gunzip GeoLiteCity.dat.gz
 RUN mv GeoLiteCity.dat /usr/share/GeoIP/GeoLiteCity.dat
+RUN rm -rf /usr/share/GeoIP/GeoIPCity.dat
 RUN ln -s /usr/share/GeoIP/GeoLiteCity.dat /usr/share/GeoIP/GeoIPCity.dat
 
 # Add geolite2 ASN
