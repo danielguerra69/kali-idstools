@@ -9,7 +9,7 @@ RUN apt-get -yy install bro tshark suricata snort \
                         python-pcapy python-elasticsearch libnet-pcap-perl  python-geoip2 \
                         mariadb-client curl vim supervisor amqp-tools && \
     apt-get -y autoremove && apt-get clean
-RUN pip install idstools
+RUN pip install idstools pyyaml ua-parser user-agents
 
 #Add geolitecityv6
 RUN wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz
