@@ -7,7 +7,7 @@ RUN apt-get -yy install bro tshark suricata snort \
                         python python-mysql.connector python-lxml python-pip \
                         python-ndg-httpsclient python-requests python-pika python-dateutil \
                         python-pcapy python-elasticsearch libnet-pcap-perl  python-geoip2 \
-                        mariadb-client curl vim supervisor amqp-tools && \
+                        mariadb-client curl vim supervisor amqp-tools libndpi-bin && \
     apt-get -y autoremove && apt-get clean
 RUN pip install idstools pyyaml ua-parser user-agents
 
