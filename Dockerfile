@@ -25,10 +25,15 @@ RUN rm -rf /usr/share/GeoIP/GeoIPCity.dat
 RUN ln -s /usr/share/GeoIP/GeoLiteCity.dat /usr/share/GeoIP/GeoIPCity.dat
 
 # Add geolite2 ASN
-RUN mkdir -p /opt/maxmind
-WORKDIR /opt/maxmind
+RUN mkdir -p /opt/maxmind /tmp/maxmind
+WORKDIR /tmp/maxmind
 RUN wget http://geolite.maxmind.com/download/geoip/database/GeoLite2-ASN.tar.gz
 RUN tar xvfz GeoLite2-ASN.tar.gz
 RUN rm -rf GeoLite2-ASN.tar.gz
-RUN find ./ -name "*.mmdb" -exec mv {} . \;
+RUN wget http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.tar.gz
+RUN tar xvfz GeoLite2-Country.tar.gz
+RUN rm -rf GeoLite2-Country.tar.gz
+RUN find ./ -name "*.mmdb" -exec mv {} /opt/maxmind \;
+RUN rm -rf /tmp/maxmind
+
 WORKDIR /root
